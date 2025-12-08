@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, Image, Alert, Platform } from 'react-native';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithCredential } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
@@ -10,9 +10,15 @@ const AuthScreen = () => {
   const [password, setPassword] = useState('');
   const [isSigningUp, setIsSigningUp] = useState(false);
 
+  useEffect(() => {
+    GoogleSignin.configure({
+      webClientId: '1013968693210-mh56mm663iuo2vil42qiumnhudl38g6k.apps.googleusercontent.com', 
+    });
+  }, []);
+
   const onGoogleButtonPress = async () => {
     try {
-      // Check if your device supports Google Play on Android
+      // Check if device supports Google Play on Android
       if (Platform.OS === 'android') {
         await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
       }

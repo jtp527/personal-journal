@@ -14,7 +14,6 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "googleServicesFile": "./GoogleService-Info.plist",
       "supportsTablet": true,
       "bundleIdentifier": "com.jonathanparsons.honorsoption",
       "infoPlist": {
@@ -29,7 +28,6 @@
       }
     },
     "android": {
-      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
